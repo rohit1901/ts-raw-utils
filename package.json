@@ -11,7 +11,7 @@
   "name": "ts-raw-utils",
   "description": "A set of utils for ts projects",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "build-prod": "npx webpack --config webpack.config.js",
     "test": "jest"

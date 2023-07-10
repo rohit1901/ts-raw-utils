@@ -4,8 +4,8 @@ module.exports = {
     entry: './src/index.ts',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'my-library.min.js',
-        library: 'MyLibrary',
+        filename: 'ts-gen-typeguards.min.js',
+        library: 'ts-gen-typeguards',
         libraryTarget: 'umd',
         umdNamedDefine: true,
     },
