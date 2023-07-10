@@ -8,7 +8,7 @@
     "webpack": "^5.88.1",
     "webpack-cli": "^5.1.4"
   },
-  "name": "typescript-utils",
+  "name": "ts-raw-utils",
   "description": "A set of utils for ts projects",
   "version": "1.0.0",
   "main": "index.js",
