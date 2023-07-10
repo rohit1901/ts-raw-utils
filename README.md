@@ -1,10 +1,9 @@
-```
 # Typescript Utility Functions
 
 A collection of TypeScript utility functions to enhance your development experience.
 
 ## Installation
-
+``` bash
 npm install typescript-utils
 ```
 
