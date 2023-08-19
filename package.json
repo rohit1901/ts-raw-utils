@@ -11,7 +11,7 @@
   },
   "name": "ts-raw-utils",
   "description": "A set of utils for ts projects",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc && node esbuild.config.js",
