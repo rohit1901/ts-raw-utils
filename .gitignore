@@ -1,7 +1,12 @@
+# Folders
 .idea/
-dist/
+.run/
+lib/
 coverage/
 node_modules
-
-package-lock.json
+# Files
 .DS_Store
+*.d.ts
+*.js
+!*.config.js
+*.map
