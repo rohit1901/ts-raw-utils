@@ -31,13 +31,15 @@
     "testRegex": "(src/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "maxWorkers": 1,
     "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ]
+      "ts", "js"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": ["./src/**/*.ts", "!./src/__tests__/**/*", "!./src/**/*.d.ts"],
+    "coverageThreshold": {
+      "global": {
+        "lines": 80
+      }
+    }
   },
   "repository": {
     "type": "git",
