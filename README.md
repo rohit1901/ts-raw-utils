@@ -1,6 +1,10 @@
 # Typescript Utility Functions
+![Typescript](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Build Status](https://github.com/rohit1901/ts-raw-utils/actions/workflows/ci.yml/badge.svg)
 
-A collection of TypeScript utility functions to enhance your development experience.
+
+> A TypeScript project that provides utility functions for your TypeScript projects.
 
 ## Installation
 ``` bash
@@ -189,7 +193,6 @@ const numbers = [1, 2, 3, 4, 5];
 const shuffled = ShuffleArray(numbers);
 console.log(shuffled); // [3, 1, 4, 5, 2] (random order)
 ```
-
 ### TruncateString
 Truncates a string to a specified length, appending an ellipsis if needed.
 ```typescript
@@ -213,11 +216,11 @@ console.log(unique); // [1, 2, 3, 4, 5]
 
 ## Contributing
 
-Contributions are welcome! If you have any bug fixes, improvements, or new utility function suggestions, please open an issue or submit a pull request.
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the [GitHub repository](https://github.com/rohit1901/ts-raw-utils).
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 Feel free to customize and expand this README file with more information about your utility functions, usage examples, guidelines for contributions, and any other relevant details.
 
