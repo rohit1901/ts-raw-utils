@@ -12,6 +12,7 @@ jobs:
     strategy:
       matrix:
         node-version: [ 20.x ]
+        bump_version: 'patch'
     steps:
       # Checkout the repo
       - uses: actions/checkout@v3
@@ -27,4 +28,13 @@ jobs:
         uses: martinbeentjes/npm-get-version-action@v1.3.1
       # Print the current version
       - run: echo "The current version is ${{ steps.package-version.outputs.current-version }}"
-      - run: echo "The bump version is ${{ github.event.pull_request.head.ref }}"
+      - name: Match branch name
+        run: |
+              if ${{ github.event.pull_request.head.ref }} == 'release/patch'; then
+                ${{ matrix.bump_version }}= patch
+              elif ${{ github.event.pull_request.head.ref }} == 'release/minor'; then
+                ${{ matrix.bump_version }}= minor
+              elif ${{ github.event.pull_request.head.ref }} == 'release/major'; then
+                ${{ matrix.bump_version }}= major
+              fi
+      - run: echo "The bump version is ${{ matrix.bump_version }}"
