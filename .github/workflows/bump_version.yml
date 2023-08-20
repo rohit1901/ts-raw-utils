@@ -33,10 +33,10 @@ jobs:
       - name: Match branch name
         run: |
               if ${{ github.event.pull_request.head.ref }} == 'release/patch'; then
-                $RELEASE_TYPE= patch
+                echo patch >> $RELEASE_TYPE 
               elif ${{ github.event.pull_request.head.ref }} == 'release/minor'; then
-                $RELEASE_TYPE= minor
+                echo minor >> $RELEASE_TYPE
               elif ${{ github.event.pull_request.head.ref }} == 'release/major'; then
-                $RELEASE_TYPE= major
+                echo major >> $RELEASE_TYPE
               fi
       - run: echo "The bump version is $RELEASE_TYPE"
