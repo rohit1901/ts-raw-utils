@@ -4,8 +4,6 @@ on:
     types: [opened, reopened]
     branches:
       - 'main'
-env:
-  RELEASE_TYPE: patch
 jobs:
   bump_version:
     if: ${{ github.event.pull_request.head.ref }} == 'release/patch' || ${{ github.event.pull_request.head.ref }} == 'release/minor' || ${{ github.event.pull_request.head.ref }} == 'release/major'
@@ -33,10 +31,10 @@ jobs:
       - name: Match branch name
         run: |
               if ${{ github.event.pull_request.head.ref }} == 'release/patch'; then
-                echo patch >> $RELEASE_TYPE 
+                echo "RELEASE_TYPE=patch" >> $GITHUB_ENV
               elif ${{ github.event.pull_request.head.ref }} == 'release/minor'; then
-                echo minor >> $RELEASE_TYPE
+                echo "RELEASE_TYPE=minor" >> $GITHUB_ENV
               elif ${{ github.event.pull_request.head.ref }} == 'release/major'; then
-                echo major >> $RELEASE_TYPE
+                echo "RELEASE_TYPE=major" >> $GITHUB_ENV
               fi
       - run: echo "The bump version is $RELEASE_TYPE"
