@@ -30,11 +30,11 @@ jobs:
       - run: echo "The current version is ${{ steps.package-version.outputs.current-version }}"
       - name: Match branch name
         run: |
-              if ${{ github.event.pull_request.head.ref  == release/patch }}; then
+              if ${{ github.event.pull_request.head.ref  == 'release/patch' }}; then
                 echo "RELEASE_TYPE=patch" >> $GITHUB_ENV
-              elif ${{ github.event.pull_request.head.ref == release/minor }}; then
+              elif ${{ github.event.pull_request.head.ref == 'release/minor' }}; then
                 echo "RELEASE_TYPE=minor" >> $GITHUB_ENV
-              elif ${{ github.event.pull_request.head.ref == release/major }}; then
+              elif ${{ github.event.pull_request.head.ref == 'release/major' }}; then
                 echo "RELEASE_TYPE=major" >> $GITHUB_ENV
               fi
       - run: echo "The bump version is $RELEASE_TYPE"
