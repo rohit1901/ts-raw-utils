@@ -6,7 +6,7 @@ on:
       - 'main'
 env:
   RELEASE_TYPE: patch
-if: ${{ github.event.pull_request.head.ref }} = 'release/patch' || ${{ github.event.pull_request.head.ref }} = 'release/minor' || ${{ github.event.pull_request.head.ref }} = 'release/major'
+if: ${{ github.event.pull_request.head.ref }} == 'release/patch' || ${{ github.event.pull_request.head.ref }} == 'release/minor' || ${{ github.event.pull_request.head.ref }} == 'release/major'
 jobs:
   bump_version:
     runs-on: ubuntu-latest
