@@ -105,7 +105,7 @@ console.log(obj); // { a: 'hello', b: 123, c: true }
 ### ChunkArray
 Splits an array into chunks of a specified size.
 ```typescript
-import { ChunkArray } from 'typescript-utils';
+import { ChunkArray } from 'ts-raw-utils';
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const chunks = ChunkArray(numbers, 3);
@@ -115,7 +115,7 @@ console.log(chunks); // [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]
 ### DeepMerge
 Deeply merges two objects, combining their properties into a new object. If a property exists in both objects and they are both objects themselves, the function recursively merges them. If the property exists in both objects and at least one of them is not an object, the value from the second object overwrites the value from the first object.
 ```typescript
-import { DeepMerge } from 'typescript-utils';
+import { DeepMerge } from 'ts-raw-utils';
 
 const target = { a: { b: 1 }, c: 2 };
 const source = { a: { c: 3 }, d: 4 };
@@ -126,7 +126,7 @@ console.log(merged); // { a: { b: 1, c: 3 }, c: 2, d: 4 }
 ### Deserialize
 Converts a JSON string to a JavaScript object.
 ```typescript
-import { Deserialize } from 'typescript-utils';
+import { Deserialize } from 'ts-raw-utils';
 
 const json = '{"name":"John","age":30}';
 const obj = Deserialize<Person>(json);
@@ -136,7 +136,7 @@ console.log(obj); // { name: 'John', age: 30 }
 ### FilterFalsy
 Filters out falsy values from an array, returning a new array with only the truthy values.
 ```typescript
-import { FilterFalsy } from 'typescript-utils';
+import { FilterFalsy } from 'ts-raw-utils';
 
 const values = [0, '', null, undefined, false, 'Hello', 123];
 const filtered = FilterFalsy(values);
@@ -146,7 +146,7 @@ console.log(filtered); // ['', 'Hello', 123]
 ### FlattenArray
 Flattens a nested array into a single-level array.
 ```typescript
-import { FlattenArray } from 'typescript-utils';
+import { FlattenArray } from 'ts-raw-utils';
 
 const nestedArray = [[1, 2], [3, [4, 5]], [6]];
 const flattened = FlattenArray(nestedArray);
@@ -156,7 +156,7 @@ console.log(flattened); // [1, 2, 3, 4, 5, 6]
 ### FormatNumber
 Formats a number with optional formatting options using the toLocaleString method.
 ```typescript
-import { FormatNumber } from 'typescript-utils';
+import { FormatNumber } from 'ts-raw-utils';
 
 const number = 1234567.89;
 const formatted = FormatNumber(number, { style: 'currency', currency: 'USD' });
@@ -166,7 +166,7 @@ console.log(formatted); // $1,234,567.89
 ### Pluralize
 Returns the singular or plural form of a word based on a count.
 ```typescript
-import { Pluralize } from 'typescript-utils';
+import { Pluralize } from 'ts-raw-utils';
 
 const item = 'apple';
 const count = 3;
@@ -177,7 +177,7 @@ console.log(pluralized); // 'apples'
 ### Serialize
 Converts a JavaScript object to a JSON string.
 ```typescript
-import { Serialize } from 'typescript-utils';
+import { Serialize } from 'ts-raw-utils';
 
 const obj = { name: 'John', age: 30 };
 const json = Serialize(obj);
@@ -187,7 +187,7 @@ console.log(json); // '{"name":"John","age":30}'
 ### ShuffleArray
 Randomly shuffles the elements of an array using the Fisher-Yates algorithm.
 ```typescript
-import { ShuffleArray } from 'typescript-utils';
+import { ShuffleArray } from 'ts-raw-utils';
 
 const numbers = [1, 2, 3, 4, 5];
 const shuffled = ShuffleArray(numbers);
@@ -196,7 +196,7 @@ console.log(shuffled); // [3, 1, 4, 5, 2] (random order)
 ### TruncateString
 Truncates a string to a specified length, appending an ellipsis if needed.
 ```typescript
-import { TruncateString } from 'typescript-utils';
+import { TruncateString } from 'ts-raw-utils';
 
 const str = 'Lorem ipsum dolor sit amet';
 const truncated = TruncateString(str, 10);
@@ -206,14 +206,43 @@ console.log(truncated); // 'Lorem ipsu...'
 ### UniqueArray
 Removes duplicate values from an array, returning a new array with only unique values.
 ```typescript
-import { UniqueArray } from 'typescript-utils';
+import { UniqueArray } from 'ts-raw-utils';
 
 const numbers = [1, 2, 2, 3, 3, 3, 4, 5, 5];
 const unique = UniqueArray(numbers);
 console.log(unique); // [1, 2, 3, 4, 5]
 ```
+### replaceAll
+Replaces all occurrences of a substring in a string with a new substring.
+```typescript
+import { replaceAll } from 'ts-raw-utils';
+const str = 'Hello, World!';
+const replaced = replaceAll(str, 'l', 'x');
+console.log(replaced); // 'Hexxo, Worxd!'
+```
+### capitalize
+Capitalizes the first letter of a string.
 
+```typescript
+import {capitalize} from 'ts-raw-utils';
+import {getEscapedCapitalizedStringLiteral, getEscapedStringLiteral} from "./index";
 
+const str = 'hello, world!';
+const capitalized = capitalize(str);
+console.log(capitalized); // 'Hello, world!'
+const escaped = getEscapedStringLiteral('"hello, world!"');
+console.log(escaped); // 'Hello, world!'
+const escapedCapitalized = getEscapedCapitalizedStringLiteral("'hello, world!'");
+console.log(escapedCapitalized); // 'Hello, world!'
+```
+### removeWhitespace
+Removes all whitespace from a string.
+```typescript
+import { removeWhitespace } from 'ts-raw-utils';
+const str = '  Hello, World!  ';
+const trimmed = removeWhitespace(str);
+console.log(trimmed); // 'Hello,World!'
+```
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the [GitHub repository](https://github.com/rohit1901/ts-raw-utils).
