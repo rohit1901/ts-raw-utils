@@ -243,6 +243,22 @@ const str = '  Hello, World!  ';
 const trimmed = removeWhitespace(str);
 console.log(trimmed); // 'Hello,World!'
 ```
+### transformer
+transforms intersection types in your TypeScript code into type guard signatures. 
+This function can help you generate type guard signatures for complex types, making your TypeScript code more expressive and maintainable.
+```typescript
+import { transformer } from 'ts-raw-utils';
+const inputCode = `
+type IntersectionType = TypeA & TypeB;
+type TypeA = { a: string };
+type TypeB = { b: number };
+`;
+const transformedCode = transformer(inputCode);
+console.log(transformedCode); 
+// type IntersectionType = {};
+// type TypeA = { a: string };
+// type TypeB = { b: number };
+```
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the [GitHub repository](https://github.com/rohit1901/ts-raw-utils).
