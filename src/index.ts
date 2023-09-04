@@ -18,3 +18,4 @@ export * from "./writable";
 export * from "./deepPartial";
 export * from "./promisify";
 export * from "./unionToIntersection";
+export * from "./transformer";
