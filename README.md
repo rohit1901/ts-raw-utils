@@ -259,6 +259,55 @@ console.log(transformedCode);
 // type TypeA = { a: string };
 // type TypeB = { b: number };
 ```
+### Logger
+
+`Logger` is a TypeScript utility class for flexible logging with different log levels. It provides an easy way to control and customize logging in your applications.
+
+#### Installation
+
+To use `Logger` in your TypeScript project, you can import the class directly:
+
+```typescript
+import Logger from './Logger'; // Adjust the import path as needed
+```
+
+#### Usage
+
+##### Enabling and Disabling Logging
+
+By default, logging is enabled. You can enable or disable it as needed.
+
+```typescript
+Logger.enableLogging(); // Enable logging (default)
+Logger.disableLogging(); // Disable logging
+```
+
+#### Log Levels
+
+`Logger` supports various log levels, each with its own prefix:
+
+- `Logger.log(message: string, ...args: any[]): void` (Regular log)
+- `Logger.info(message: string, ...args: any[]): void` (Informational)
+- `Logger.warn(message: string, ...args: any[]): void` (Warning)
+- `Logger.error(message: string, ...args: any[]): void` (Error)
+- `Logger.debug(message: string, ...args: any[]): void` (Debugging)
+- `Logger.trace(message: string, ...args: any[]): void` (Trace)
+- `Logger.fatal(message: string, ...args: any[]): void` (Fatal error)
+
+Example usage:
+
+```typescript
+Logger.log("This is a regular log message.");
+Logger.info("This is an info message.");
+Logger.warn("This is a warning message.");
+Logger.error("This is an error message.");
+Logger.debug("This is a debug message.");
+Logger.trace("This is a trace message.");
+Logger.fatal("This is a fatal message.");
+```
+#### Customization
+You can customize the behavior of each log level by modifying the `Logger` class to suit your needs. For example, you can redirect logs to different outputs or format log messages differently.
+
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the [GitHub repository](https://github.com/rohit1901/ts-raw-utils).
