@@ -1,55 +1,55 @@
 export class Logger {
-    private static isEnabled = true; // Flag to enable or disable logging
+  private static isEnabled = true; // Flag to enable or disable logging
 
-    static enableLogging() {
-        Logger.isEnabled = true;
-    }
+  static enableLogging() {
+    Logger.isEnabled = true;
+  }
 
-    static disableLogging() {
-        Logger.isEnabled = false;
-    }
+  static disableLogging() {
+    Logger.isEnabled = false;
+  }
 
-    static log(message: string, ...args: any[]) {
-        if (Logger.isEnabled) {
-            console.log(message, ...args);
-        }
+  static log(message: string, ...args: any[]) {
+    if (Logger.isEnabled) {
+      console.log(message, ...args);
     }
+  }
 
-    static info(message: string, ...args: any[]) {
-        if (Logger.isEnabled) {
-            console.info(`[INFO] ${message}`, ...args);
-        }
+  static info(message: string, ...args: any[]) {
+    if (Logger.isEnabled) {
+      console.info(`[INFO] ${message}`, ...args);
     }
+  }
 
-    static warn(message: string, ...args: any[]) {
-        if (Logger.isEnabled) {
-            console.warn(`[WARNING] ${message}`, ...args);
-        }
+  static warn(message: string, ...args: any[]) {
+    if (Logger.isEnabled) {
+      console.warn(`[WARNING] ${message}`, ...args);
     }
+  }
 
-    static error(message: string, ...args: any[]) {
-        if (Logger.isEnabled) {
-            console.error(`[ERROR] ${message}`, ...args);
-        }
+  static error(message: string, ...args: any[]) {
+    if (Logger.isEnabled) {
+      console.error(`[ERROR] ${message}`, ...args);
     }
+  }
 
-    static debug(message: string, ...args: any[]) {
-        if (Logger.isEnabled) {
-            console.debug(`[DEBUG] ${message}`, ...args);
-        }
+  static debug(message: string, ...args: any[]) {
+    if (Logger.isEnabled) {
+      console.debug(`[DEBUG] ${message}`, ...args);
     }
+  }
 
-    static trace(message: string, ...args: any[]) {
-        if (Logger.isEnabled) {
-            console.trace(`[TRACE] ${message}`, ...args);
-        }
+  static trace(message: string, ...args: any[]) {
+    if (Logger.isEnabled) {
+      console.trace(`[TRACE] ${message}`, ...args);
     }
+  }
 
-    static fatal(message: string, ...args: any[]) {
-        if (Logger.isEnabled) {
-            console.error(`[FATAL] ${message}`, ...args);
-        }
+  static fatal(message: string, ...args: any[]) {
+    if (Logger.isEnabled) {
+      console.error(`[FATAL] ${message}`, ...args);
     }
+  }
 }
 
 // Example usage
