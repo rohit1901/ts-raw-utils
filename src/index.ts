@@ -19,3 +19,4 @@ export * from "./deepPartial";
 export * from "./promisify";
 export * from "./unionToIntersection";
 export * from "./transformer";
+export * from "./Logger";
